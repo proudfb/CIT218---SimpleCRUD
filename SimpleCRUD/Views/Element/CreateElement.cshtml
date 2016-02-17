@@ -1,0 +1,97 @@
+﻿@model SimpleCRUD.Models.Element
+@{
+    ViewBag.Title = "Create an Element";
+}
+
+<h2>Create an Element</h2>
+<form action="/Element/CreateElement" method="post">
+    <table class="table">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                <input type="text" required name="name" value="" />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Symbol
+            </th>
+            <th>
+                <input type="text" required maxlength="2" name="symbol" value="" />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Atomic Number
+            </th>
+            <th>
+                <input type="number" max="999" required name="atomicNumber" value="" />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Atomic Weight
+            </th>
+            <th>
+                <input type="text" pattern="\d+[.]\d+" maxlength="308" placeholder="1.0" required name="atomicWeight" value="" />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Radioactive?
+            </th>
+            <th>
+                <input type="radio" required name="isRadioactive" value="True" /> True <br />
+                <input type="radio" required name="isRadioactive" value="False"/> False
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Element Family
+            </th>
+            <th>
+                <select required name="family">
+                    <option value="Lithium">Lithium</option>
+                    <option value="Beryllium">Beryllium</option>
+                    <option value="Scandium">Scandium</option>
+                    <option value="Titanium">Titanium</option>
+                    <option value="Vanadium">Vanadium</option>
+                    <option value="Chromium">Chromium</option>
+                    <option value="Manganese">Manganese</option>
+                    <option value="Iron">Iron</option>
+                    <option value="Cobalt">Cobalt</option>
+                    <option value="Nickel">Nickel</option>
+                    <option value="Copper">Copper</option>
+                    <option value="Zinc">Zinc</option>
+                    <option value="Boron">Boron</option>
+                    <option value="Carbon">Carbon</option>
+                    <option value="Nitrogen">Nitrogen</option>
+                    <option value="Oxygen">Oxygen</option>
+                    <option value="Fluorine">Fluorine</option>
+                    <option value="Helium">Helium</option>
+                </select>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Period
+            </th>
+            <th>
+                <input type="number" min="1" max="7" required name="period" value="" />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Atomic Radius
+            </th>
+            <th>
+                <input type="number" min="1" max="2000" required name="atomicRadius" value="" />
+            </th>
+        </tr>
+    </table>
+    <input type="submit" name="operation" value="Add" />
+    <input type="submit" name="operation" value="Cancel" />
+</form>
+

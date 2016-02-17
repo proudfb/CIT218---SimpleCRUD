@@ -1,0 +1,13 @@
+﻿@model SimpleCRUD.Models.Element
+@{
+    ViewBag.Title = "Delete an Element";
+}
+
+<h2>You're deleting @Model.name</h2>
+<p>If you're sure, press Delete. If not, press Cancel.</p>
+
+<form action="/Element/DeleteElement" method="post">
+    <input type="hidden" name="id" value="@Model.atomicNumber" />
+    <input type="submit" name="operation" value="Delete" />
+    <input type="submit" name="operation" value="Cancel" />
+</form>

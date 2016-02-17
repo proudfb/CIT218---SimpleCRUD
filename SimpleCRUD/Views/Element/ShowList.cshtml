@@ -1,0 +1,17 @@
+﻿@model List<SimpleCRUD.Models.Element>
+@{
+    ViewBag.Title = "Show a List";
+}
+
+<h2>Show a List</h2>
+@foreach (var item in Model)
+{
+    <div>
+        @item.name<br />
+        Symbol: @item.symbol<br />
+        Atomic Number: @item.atomicNumber<br />
+        @item.atomicWeight A<sub>r</sub>, @item.atomicRadius pm<br />
+        Radioactive? @item.isRadioactive.ToString()<br />
+        From the @item.family family, Period @item.period<hr />
+    </div>
+}
