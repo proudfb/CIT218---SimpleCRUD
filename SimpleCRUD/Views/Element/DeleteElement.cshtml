@@ -7,7 +7,7 @@
 <p>If you're sure, press Delete. If not, press Cancel.</p>
 
 <form action="/Element/DeleteElement" method="post">
-    <input type="hidden" name="id" value="@Model.atomicNumber" />
+    <input type="hidden" name="atomicNumber" value="@Model.atomicNumber" />
     <input type="submit" name="operation" value="Delete" />
     <input type="submit" name="operation" value="Cancel" />
 </form>

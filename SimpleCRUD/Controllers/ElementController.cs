@@ -15,15 +15,7 @@ namespace SimpleCRUD.Controllers
         public ElementController()
         {
             //if the data hasn't been initialized yet, do so
-            if (this.el == null)
-            {
-                Data.InitializeElements();
-                this.el = new ElementRepository();
-            }
-            else
-            {
-                this.el = new ElementRepository();
-            }
+            this.el = new ElementRepository();
         }
 
         // 
@@ -153,6 +145,7 @@ namespace SimpleCRUD.Controllers
             {
                 Element e = new Element()
                 {
+                    atomicNumber = Convert.ToInt32(form["atomicNumber"]),
                     name = form["name"], 
                     symbol = form["symbol"], 
                     atomicWeight = Convert.ToDouble(form["atomicWeight"]), 
@@ -161,18 +154,18 @@ namespace SimpleCRUD.Controllers
                     period = Convert.ToInt32(form["period"]),
                     atomicRadius = Convert.ToInt32(form["atomicRadius"])
                 };
-                try
-                {
+                //try
+                //{
                     el.Update(e);
-                }
-                catch (ArgumentException)
-                {
-                    return Redirect("/Error/KnownError/update");
-                }
-                catch (Exception)
-                {
-                    return Redirect("/Error/Index/");
-                }
+                //}
+                //catch (ArgumentException)
+                //{
+                //    return Redirect("/Error/KnownError/update");
+                //}
+                //catch (Exception)
+                //{
+                //    return Redirect("/Error/Index/");
+                //}
 
             }
             return Redirect("/Element/ShowTable");
