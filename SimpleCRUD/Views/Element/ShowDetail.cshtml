@@ -4,7 +4,7 @@
 }
 
 <h2>ShowDetail</h2>
-@*<table class="table">
+<table class="table">
     <tr>
         <th>
             Atomic Number
@@ -30,39 +30,31 @@
         <th>
             Period
         </th>
-        <th>
-        </th>
     </tr>
     <tr>
         <td>
-            atomicNumber
+            @Html.Display("atomicNumber")
         </td>
         <td>
-            @item.name
+            @Html.Display("name")
         </td>
         <td>
-            @item.symbol
+            @Html.Display("symbol")
         </td>
         <td>
-            @item.atomicWeight
+            @Html.Display("atomicWeight")
         </td>
         <td>
-            @item.atomicRadius
+            @Html.Display("atomicRadius")
         </td>
         <td>
-            @item.isRadioactive.ToString()
+            @Html.Display("isRadioactive.ToString()")
         </td>
         <td>
-            @item.family
+            @Html.Display("family")
         </td>
         <td>
-            @item.period
-        </td>
-        <td>
-            <a href="/Element/ShowDetail?id=@item.atomicNumber" )">View</a>&nbsp;&nbsp;
-            <a href="/Element/UpdateElement?id=@item.atomicNumber">Edit</a>&nbsp;&nbsp;
-            <a href="/Element/DeleteElement?id=@item.atomicNumber">Delete</a>&nbsp;&nbsp;
+            @Html.Display("period")
         </td>
     </tr>
 </table>
-<a href="/Element/CreateElement/">Create your own</a>*@

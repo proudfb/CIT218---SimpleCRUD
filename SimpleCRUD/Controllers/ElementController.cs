@@ -154,18 +154,18 @@ namespace SimpleCRUD.Controllers
                     period = Convert.ToInt32(form["period"]),
                     atomicRadius = Convert.ToInt32(form["atomicRadius"])
                 };
-                //try
-                //{
+                try
+                {
                     el.Update(e);
-                //}
-                //catch (ArgumentException)
-                //{
-                //    return Redirect("/Error/KnownError/update");
-                //}
-                //catch (Exception)
-                //{
-                //    return Redirect("/Error/Index/");
-                //}
+                }
+                catch (ArgumentException)
+                {
+                    return Redirect("/Error/KnownError/update");
+                }
+                catch (Exception)
+                {
+                    return Redirect("/Error/Index/");
+                }
 
             }
             return Redirect("/Element/ShowTable");
